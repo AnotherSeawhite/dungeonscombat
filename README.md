@@ -38,8 +38,8 @@ This is my first time making an addon for Minecraft. I want to say thanks to eve
 
 ## Info
 You may:
-- modify, copy and distribute the addon
-- use it privately
+- Modify, copy and distribute the addon
+- Use it privately
   
 You probably shouldn't:
 - Use it for commercial use (This addon contains Mojang's assets. Refer to Minecraft EULA)
