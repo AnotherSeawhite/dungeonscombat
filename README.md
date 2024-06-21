@@ -26,6 +26,7 @@ Because of lack of my coding knowledge, some features in Minecraft may not be pr
 - **Survival**
 - **Building**
 - Transportations like elytras, boats, minecarts, horses, etc.
+- Swimming
 - Misc features like enderman aggression
 - Sprinting (because of how the movements work like)
 - Shield blocking
