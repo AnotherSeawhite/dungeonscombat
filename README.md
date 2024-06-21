@@ -40,6 +40,7 @@ This is my first time making an addon for Minecraft. I want to say thanks to eve
 You may:
 - modify, copy and distribute the addon
 - use it privately
+  
 You probably shouldn't:
 - Use it for commercial use (This addon contains Mojang's assets. Refer to Minecraft EULA)
 - Claim the pack as your own (i would be sad)
