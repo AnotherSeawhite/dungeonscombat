@@ -1,0 +1,20 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "dungeonscombat:dungeonslogo",
+			"materials": {
+				"default": "entity_alphatest_one_sided"
+			},
+			"textures": {
+				"default": "textures/entity/font"
+			},
+			"geometry": {
+				"default": "geometry.dungeonslogo"
+			},
+			"render_controllers": [
+				"controller.render.dungeonslogo"
+			]
+		}
+	}
+}
