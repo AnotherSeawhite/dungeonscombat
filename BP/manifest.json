@@ -7,7 +7,7 @@
 		"version": [
 			1,
 			0,
-			22
+			31
 		],
 		"min_engine_version": [
 			1,
@@ -24,6 +24,17 @@
 				0,
 				0
 			]
+		},
+		{
+			"type": "script",
+			"language": "javascript",
+			"uuid": "fb368610-ce39-4f8d-965c-bc1843b0223d",
+			"version": [
+				1,
+				0,
+				0
+			],
+			"entry": "scripts/main.js"
 		}
 	],
 	"dependencies": [
@@ -32,8 +43,12 @@
 			"version": [
 				1,
 				0,
-				23
+				31
 			]
+		},
+		{
+			"module_name": "@minecraft/server",
+			"version": "1.8.0"
 		}
 	],
 	"metadata": {}
