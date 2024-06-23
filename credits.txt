@@ -1,0 +1,4 @@
+This project uses "Clearer water fog" from Bedrock Tweaks.
+Credits:
+Vanilla Tweaks: https://vanillatweaks.net/
+Bedrock Tweaks: https://bedrocktweaks.net/
