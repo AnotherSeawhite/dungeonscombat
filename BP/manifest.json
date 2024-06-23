@@ -1,0 +1,55 @@
+{
+	"format_version": 2,
+	"header": {
+		"name": "Dungeons Combat Behavior Pack",
+		"description": "Behavior pack for Dungeons Combat Addon.",
+		"uuid": "d670b8bc-2c8f-a152-9d18-38a3ea2df2f3",
+		"version": [
+			1,
+			0,
+			31
+		],
+		"min_engine_version": [
+			1,
+			21,
+			0
+		]
+	},
+	"modules": [
+		{
+			"type": "data",
+			"uuid": "81a7a3eb-b200-0279-51ff-384755fec9d4",
+			"version": [
+				1,
+				0,
+				0
+			]
+		},
+		{
+			"type": "script",
+			"language": "javascript",
+			"uuid": "fb368610-ce39-4f8d-965c-bc1843b0223d",
+			"version": [
+				1,
+				0,
+				0
+			],
+			"entry": "scripts/main.js"
+		}
+	],
+	"dependencies": [
+		{
+			"uuid": "22e02cde-62e8-3a47-a9eb-e84e88351edd",
+			"version": [
+				1,
+				0,
+				31
+			]
+		},
+		{
+			"module_name": "@minecraft/server",
+			"version": "1.8.0"
+		}
+	],
+	"metadata": {}
+}
