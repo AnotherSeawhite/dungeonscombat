@@ -46,7 +46,7 @@ system.runInterval(() => {
             }
 
             const PlayerLocation = { 
-                // note: in practice, negative value is positive and vice versa. ex) if Rot is 1, its actually (-5, 10, -5) and not (5, -10, 5)
+                // note: in practice, negative value is positive and vice versa. ex) if Campos is 1, its actually (-5, 10, -5) and not (5, -10, 5)
                 x: players.getHeadLocation().x + xOffset,
                 y: players.getHeadLocation().y - 10,
                 z: players.getHeadLocation().z + zOffset
