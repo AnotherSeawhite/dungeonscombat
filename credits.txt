@@ -3,4 +3,4 @@ Credits:
 Vanilla Tweaks: https://vanillatweaks.net/
 Bedrock Tweaks: https://bedrocktweaks.net/
 
-Camera scripts are made by Gamerelk.
+Camera scripts templates by Gamerelk.
