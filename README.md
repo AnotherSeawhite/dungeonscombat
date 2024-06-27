@@ -5,18 +5,18 @@
 
 Dungeons Combat is an addon for Minecraft Bedrock Edition that implements the basic idea of Minecraft Dungeons' combat mechanics, featuring top-down camera view with RPG-like movement and Hack and Slash style combat.
 
-**This addon is not finished yet!**
+**This addon is in development!**
 
 ## Features
 - Top-down isometric-like camera view
-- (Not implemented yet) Hack and Slash combat and movement
+- (In progress) Hack and Slash combat and movement
 
 ## Screenshots
 Coming soon!
 
 ## How to play
 After downloading the addon and applying the pack into your world, simply activate the camera by typing `/function dc.on`. You can deactivate it by typing `/function dc.off`.
-Holding a compass and sneaking will change the camera position based on where the player is looking at.
+Holding a compass and sneaking will change the camera position based on the direction the player is looking at.
 
 ## Note
 This addon focuses on compatibility with other addons and highly-moddable features, so that you can implement it and add contents for your creations. **It's not a 100% complete imitation of Minecraft Dungeons' mechanics.** Many features from the game are absent in this addon, such as weapons, enemies, combat roll and etc. 
@@ -28,9 +28,8 @@ Because of lack of my coding knowledge, some features in Minecraft may not be pr
 - **Survival**
 - **Building**
 - Transportations like elytras, boats, minecarts, horses, etc.
-- Swimming
 - Misc features like enderman aggression
-- Sprinting (because of how the movements work like)
+- Movements such as sprinting and swimming (because of how the movements work like)
 - Shield blocking
 - PVP
 
