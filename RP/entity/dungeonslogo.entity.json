@@ -7,7 +7,7 @@
 				"default": "entity_alphatest_one_sided"
 			},
 			"textures": {
-				"default": "textures/entity/font"
+				"default": "textures/entity/dc_font"
 			},
 			"geometry": {
 				"default": "geometry.dungeonslogo"

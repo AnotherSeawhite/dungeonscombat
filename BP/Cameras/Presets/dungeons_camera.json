@@ -1,3 +1,6 @@
+// 
+// Default camera preset for Dungeons Combat
+// 
 { 
   "format_version": "1.19.50", 
   "minecraft:camera_preset": { 

@@ -19,9 +19,9 @@ function getScore(target, objective, useZero = true) { // get scoreboard
 
 system.runInterval(() => {
     for (const players of world.getAllPlayers()) {
-        const Camerastate = getScore(players, "camerastate");
+        const Camerastate = getScore(players, "dc_camerastate");
         if (Camerastate === 1) {
-            const Campos = getScore(players, "campos"); // calculated in rot.mcfunction
+            const Campos = getScore(players, "dc_campos"); // calculated in dc_rot.mcfunction
             let xOffset = 0; // not to be confused with XOffset
             let zOffset = 0; // this one too
             switch (Campos) {
@@ -46,12 +46,12 @@ system.runInterval(() => {
             }
 
             const PlayerLocation = { 
-                // note: in practice, negative value is positive and vice versa. ex) if Campos is 1, its actually (-5, 10, -5) and not (5, -10, 5)
+                // note: in practice, negative value is positive and vice versa. ex) if Campos is 1, its actually (-5, 8.66, -5) and not (5, -8.66, 5)
                 x: players.getHeadLocation().x + xOffset,
-                y: players.getHeadLocation().y - 10,
+                y: players.getHeadLocation().y - 8.66,
                 z: players.getHeadLocation().z + zOffset
             };
-            const Camerafunction = new Camera(players).BehindPlayerFocusOnLocation(PlayerLocation, 10, { CanBlockObstructView: false }); // the camera breaks if any Offset is used. use PlayerLocation instead
+            const Camerafunction = new Camera(players).BehindPlayerFocusOnLocation(PlayerLocation, 30, { CanBlockObstructView: false }); // the camera breaks if any Offset is used. use PlayerLocation instead
             Camerafunction;
         }
     }

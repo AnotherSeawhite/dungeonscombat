@@ -1,8 +1,7 @@
-/*
+//
+// This script was made by Gamerelk!
+//
 
--- This script was made with Gamerelk's camera presets!
-
-*/
 import { system, world, EntityType } from '@minecraft/server'
 
 class Camera {

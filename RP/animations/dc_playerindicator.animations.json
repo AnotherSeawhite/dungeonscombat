@@ -1,10 +1,10 @@
 {
 	"format_version": "1.8.0",
 	"animations": {
-		"animation.playeraura.rotation": {
+		"animation.dc_playerindicator.rotation": {
 			"loop": true,
 			"bones": {
-				"playeraura": {
+				"dc_playerindicator": {
 					"rotation": [
 						0,
 						"-query.body_y_rotation",
@@ -13,10 +13,10 @@
 				}
 			}
 		},
-		"animation.playeraura.scale": {
+		"animation.dc_playerindicator.scale": {
 			"loop": true,
 			"bones": {
-				"playeraura": {
+				"dc_playerindicator": {
 					"scale": "query.is_sleeping || query.is_spectator ? 0.0 : 1.0"
 				}
 			}

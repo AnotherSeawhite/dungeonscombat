@@ -1,12 +1,12 @@
 {
 	"format_version": "1.10.0",
 	"animation_controllers": {
-		"controller.animation.playeraura.model": {
+		"controller.animation.dc_playerindicator.model": {
 			"states": {
 				"model": {
 					"animations": [
-						"playeraura.rotation",
-						"playeraura.scale"
+						"dc_playerindicator.rotation",
+						"dc_playerindicator.scale"
 					]
 				}
 			}

@@ -1,5 +1,6 @@
 {
     "values": [
-        "rot"
+        "dc.start",
+        "dc.rot"
     ]
 }
