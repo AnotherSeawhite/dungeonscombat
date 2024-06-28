@@ -15,8 +15,7 @@ Dungeons Combat is an addon for Minecraft Bedrock Edition that implements the ba
 Coming soon!
 
 ## How to play
-After downloading the addon and applying the pack into your world, simply activate the camera by typing `/function dc.on`. You can deactivate it by typing `/function dc.off`.
-Holding a compass and sneaking will change the camera position based on the direction the player is looking at.
+After applying the RP and BP into your world, it'll automatically activate. typing `/function dc.off` will disable the addon, and `/function dc.on` will enable it back.
 
 ## Note
 This addon focuses on compatibility with other addons and highly-moddable features, so that you can implement it and add contents for your creations. **It's not a 100% complete imitation of Minecraft Dungeons' mechanics.** Many features from the game are absent in this addon, such as weapons, enemies, combat roll and etc. 
