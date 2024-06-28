@@ -1,0 +1,33 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.dc_player.rotation": {
+			"loop": true,
+			"bones": {
+				"root": {
+					"rotation": {
+						"0.0": [
+							0,
+							"v.dc_angle-q.body_y_rotation",
+							0
+						]
+					}
+				}
+			}
+		},
+		"animation.dc_player_head.rotation": {
+			"loop": true,
+			"bones": {
+				"head": {
+					"rotation": {
+						"0.0": [
+							"-q.target_x_rotation",
+							"-q.target_y_rotation-q.body_y_rotation+v.dc_angle",
+							0
+						]
+					}
+				}
+			}
+		}
+	}
+}
