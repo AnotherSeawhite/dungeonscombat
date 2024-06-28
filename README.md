@@ -21,6 +21,8 @@ After applying the RP and BP into your world, it'll automatically activate. Typi
 This addon focuses on compatibility with other addons and highly-moddable features, so that you can implement it and add contents for your creations. **It's not a 100% complete imitation of Minecraft Dungeons' mechanics.** Many features from the game are absent in this addon, such as weapons, enemies, combat roll and etc. 
 
 _**Warning: This addon contains `player.entity.json`, which might break other animations and/or custom model related addons! You can avoid this by editing other addons' `player.entity.json` file to have Dungeons Combat properties. Refer to README inside addon files for compatibility!**_
+<!-- For some reason, comments inside the json files won't appear. This is most likely due to bridge automatically hiding the comments. I might have to look for better ways to attach comments. -->
+
 
 ### Limits
 Because of lack of my coding knowledge, some features in Minecraft may not be properly implemented or be unplayable/unusable, such as:
