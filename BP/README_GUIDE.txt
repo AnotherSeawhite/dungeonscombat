@@ -4,3 +4,15 @@ This README entails (maybe) everything needed for the behavior pack / server-sid
 0. Beginning
 
 Minecraft Dungeons have top-down isometric-like camera view. Recommeneded FOV is 38'.
+
+
+1.
+
+
+2.
+
+
+3
+
+
+4
