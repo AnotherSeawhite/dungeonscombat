@@ -1,3 +1,7 @@
+// 
+// This makes arrows to be unaffected by gravity.
+// It also disables knockbacks.
+//
 {
 	"format_version": "1.13.0",
 	"minecraft:entity": {

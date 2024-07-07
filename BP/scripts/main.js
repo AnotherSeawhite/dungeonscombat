@@ -1,5 +1,6 @@
 import { system, world } from "@minecraft/server"
 import { Camera } from "./cameraclass.js"
+import "./combat.js"
 
 function getScore(target, objective, useZero = true) { // get scoreboard
     try {
@@ -53,6 +54,22 @@ system.runInterval(() => {
             };
             const Camerafunction = new Camera(players).BehindPlayerFocusOnLocation(PlayerLocation, 30, { CanBlockObstructView: false }); // the camera breaks if any Offset is used. use PlayerLocation instead
             Camerafunction;
+            // this disables sprinting and crits
+                players.addEffect('blindness', 10, {amplifier:0,showParticles:false});
         }
     }
+});
+
+// summon hitbox upon joining
+//
+// behind story of this code: i am still inexperienced in scripting and
+// i wasted 2 hours making this to work. it ended up not working so i
+// had to get others help
+world.afterEvents.playerSpawn.subscribe(({ player }) => {
+  const hitboxspawn = player.dimension.spawnEntity("dungeonscombat:hitboxride", player.location);
+  const rideableComp = player.getComponent("minecraft:rideable");
+  rideableComp.addRider(hitboxspawn);
+  if (!rideableComp.getComponent("minecraft:riding") || rideableComp.getComponent("minecraft:riding").entityRidingOn.typeId !== "minecraft:player") { 
+    hitboxspawn.remove(); 
+  };
 });

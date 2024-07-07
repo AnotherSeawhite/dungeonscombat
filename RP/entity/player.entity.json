@@ -1,3 +1,7 @@
+// 
+// This json file contains stuffs needed to make Dungeons Combat compatible with your contents.
+// Use the items marked with comments, or use the items that starts with "dc_".
+//
 {
 	"format_version": "1.10.0",
 	"minecraft:client_entity": {
@@ -8,17 +12,35 @@
 				"cape": "entity_alphatest",
 				"animated": "player_animated",
 				"spectator": "player_spectator",
+				//
+				// [Dungeons Combat] Material for player indicator model
+				//
 				"dc_emissive": "entity_emissive_alpha"
+				//
+				//
+				//
 			},
 			"textures": {
 				"default": "textures/entity/steve",
 				"cape": "textures/entity/cape_invisible",
+				//
+				// [Dungeons Combat] Texture for player indicator 
+				//
 				"dc_playerindicator": "textures/entity/dc_playerindicator"
+				//
+				//
+				//
 			},
 			"geometry": {
 				"default": "geometry.humanoid.custom",
 				"cape": "geometry.cape",
+				//
+				// [Dungeons Combat] Player indicator geometry
+				//
 				"dc_playerindicator": "geometry.dc_playerindicator"
+				//
+				//
+				//
 			},
 			"scripts": {
 				"scale": "0.9375",
@@ -27,8 +49,14 @@
 					"variable.is_blinking = 0.0;",
 					"variable.last_blink_time = 0.0;",
 					"variable.hand_bob = 0.0;",
+					//
+					// [Dungeons Combat] For player rotation
+					//
 					"variable.dc_x = 0;",
 					"variable.dc_z = 0;"
+					//
+					//
+					//
 				],
 				"pre_animation": [
 					"variable.helmet_layer_visible = 1.0;",
@@ -41,16 +69,28 @@
 					"variable.hand_bob = query.life_time < 0.01 ? 0.0 : variable.hand_bob + ((query.is_on_ground && query.is_alive ? math.clamp(math.sqrt(math.pow(query.position_delta(0), 2.0) + math.pow(query.position_delta(2), 2.0)), 0.0, 0.1) : 0.0) - variable.hand_bob) * 0.02;",
 					"variable.map_angle = math.clamp(1 - variable.player_x_rotation / 45.1, 0.0, 1.0);",
 					"variable.item_use_normalized = query.main_hand_item_use_duration / query.main_hand_item_max_duration;",
+					//
+					// [Dungeons Combat] !VITAL! Movement and player rotation queries 
+					//
 					"variable.dc_x = (q.modified_move_speed > 0.1) ? q.movement_direction(0) : v.dc_x;",
 					"variable.dc_z = (q.modified_move_speed > 0.1) ? q.movement_direction(2) : v.dc_z;",
 					"variable.dc_angle = math.atan2(v.dc_z, v.dc_x) - 90.0;"
+					//
+					//
+					//
 				],
 				"animate": [
 					"root",
+					//
+					// [Dungeons Combat] !VITAL! Animation scripts
+					//
 					"dc_playerindicator",
 					{
-						"dc_player_movement": "!q.is_gliding||!q.is_sleeping||q.is_swimming"
+					"dc_player_movement": "q.is_moving && !q.is_gliding || !q.is_sleeping || q.is_swimming"
 					}
+			        //
+					//
+					//
 				]
 			},
 			"animations": {
@@ -58,12 +98,18 @@
 				"base_controller": "controller.animation.player.base",
 				"hudplayer": "controller.animation.player.hudplayer",
 				"humanoid_base_pose": "animation.humanoid.base_pose",
+				//
+				// [Dungeons Combat] Animations 
+				// 
 				"dc_player_movement": "controller.animation.dc_player_movement",
 				"dc_player.rotation": "animation.dc_player.rotation",
 				"dc_player_head.rotation": "animation.dc_player_head.rotation",
 				"dc_playerindicator": "controller.animation.dc_playerindicator.model",
 				"dc_playerindicator.scale": "animation.dc_playerindicator.scale",
 				"dc_playerindicator.rotation": "animation.dc_playerindicator.rotation",
+				//
+				//
+				//
 				"cape": "animation.player.cape",
 				"move.arms": "animation.player.move.arms",
 				"move.legs": "animation.player.move.legs",
@@ -131,9 +177,15 @@
 				{
 					"controller.render.player.map": "variable.map_face_icon"
 				},
-				{
+				//
+				// [Dungeons Combat] Render player indicator
+				//
+				{ 
 					"controller.render.dc_playerindicator": "!variable.is_first_person"
 				}
+				//
+				//
+				//
 			],
 			"enable_attachables": true
 		}
