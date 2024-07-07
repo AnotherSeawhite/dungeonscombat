@@ -1,0 +1,30 @@
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {
+		"controller.animation.dc_player_movement": {
+			"initial_state": "idle",
+			"states": {
+				"idle": {
+					"animations": [ "dc_player.rotation", "dc_player_head.rotation" ],
+					"transitions": [
+						{
+							"moving": "q.modified_move_speed >= 0.1"
+						}
+					],
+					"blend_transition": 0.15,
+					"blend_via_shortest_path": true
+				},
+				"moving": {
+					"animations": [ "dc_player.rotation", "dc_player_head.rotation" ],
+					"transitions": [
+						{
+							"idle": "q.modified_move_speed < 0.1"
+						}
+					],
+					"blend_transition": 0.15,
+					"blend_via_shortest_path": true
+				}
+			}
+		}
+	}
+}

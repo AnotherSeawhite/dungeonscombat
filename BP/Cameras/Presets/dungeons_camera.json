@@ -1,0 +1,11 @@
+// 
+// Default camera preset for Dungeons Combat
+// 
+{ 
+  "format_version": "1.19.50", 
+  "minecraft:camera_preset": { 
+    "identifier": "dungeonscombat:free", 
+    "inherit_from": "minecraft:free",
+    "listener": "player"
+  } 
+}
