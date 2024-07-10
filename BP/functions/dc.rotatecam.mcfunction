@@ -1,1 +1,0 @@
-execute as @a[tag=dcstate] at @s run scoreboard players add @a[tag=dcstate] dc_campos 1
