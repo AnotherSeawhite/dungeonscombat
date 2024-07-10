@@ -1,0 +1,48 @@
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {
+		"controller.animation.dc_player_movement": {
+			"initial_state": "idle",
+			"states": {
+				"idle": {
+					"animations": [ "dc_player.rotation", "dc_player_head.rotation" ],
+					"transitions": [
+						{
+							"moving": "q.ground_speed >= 1"
+						// },
+						// {
+						// 	"attacking": "v.attack_time"
+						}
+					],
+					"blend_transition": 0.15,
+					"blend_via_shortest_path": true
+				},
+				"moving": {
+					"animations": [ "dc_player.rotation", "dc_player_head.rotation" ],
+					"transitions": [
+						{
+							"idle": "q.ground_speed < 1"
+						// },
+						// {
+						// 	"attacking": "v.attack_time" 
+						}
+					],
+					"blend_transition": 0.15,
+					"blend_via_shortest_path": true
+				// },
+				// "attacking": {
+				// 	"animations": [ "dc_player_attack.rotation" ],
+				// 	"transitions": [
+				// 		{
+				// 			"moving": "query.modified_move_speed >= 0.1 && v.attack_time == 0"
+				// 		},
+				// 		{
+				// 			"idle": "query.modified_move_speed < 0.1 && v.attack_time == 0" 
+				// 		}
+				// 	],
+				// 	"blend_transition": 0.15
+				}
+			}
+		}
+	}
+}

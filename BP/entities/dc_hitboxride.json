@@ -1,0 +1,101 @@
+{
+	"format_version": "1.16.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "dungeonscombat:hitboxride",
+			"is_summonable": true,
+			"is_spawnable": false,
+			"is_experimental": false
+		},
+		"component_groups": {
+			"dungeonscombat:despawn": {
+				"minecraft:instant_despawn": {
+				"remove_child_entities": true
+		     	}
+			}
+		},
+		"components": {
+			"minecraft:environment_sensor": {
+				"triggers": [
+					{
+					"filters": [
+						{
+							"any_of": [
+								{
+									"test": "is_riding",
+									"subject": "self",
+									"operator": "==",
+									"value": false
+								}
+							]
+						}
+					], "event": "minecraft:instant_despawn"
+				}
+				]
+			},
+            "minecraft:type_family": {
+                "family": [
+                    "dchitboxride"
+                ]
+            },
+			"minecraft:addrider": {
+				"entity_type": "dungeonscombat:hitbox"
+			},
+			"minecraft:knockback_resistance": {
+				"value": 1.0,
+				"max": 1.0
+			},
+			"minecraft:breathable": { 
+				"breathes_water": true
+			},
+			"minecraft:physics": { 
+				"has_gravity": false, 
+				"has_collision": false
+			},
+			"minecraft:custom_hit_test": {
+				"hitboxes": [
+					{
+						"pivot": [0, 0, 0],
+						"width": 0,
+						"height": 0
+					}
+				]
+			},
+			"minecraft:damage_sensor": {
+				"triggers": {
+					"deals_damage": false
+				}
+			},
+			"minecraft:rideable": {
+				"seat_count": 1,
+				"family_types": [
+					"dchitbox"
+					],
+				"seats": [
+					{
+					"position": [ 0, 0, 0 ],
+					"min_rider_count": 0,
+					"max_rider_count": 0
+					}
+				]
+			},
+			"minecraft:pushable": {
+				"is_pushable": false,
+				"is_pushable_by_piston": false
+			},
+			"minecraft:collision_box": {
+				"width": 0.0001,
+				"height": 0.0001
+			}
+		},
+		"events": {
+			"minecraft:instant_despawn": {
+				"add": {
+					"component_groups": [
+						"dungeonscombat:despawn"
+					]
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,13 @@
+{
+	"entity_sounds": {
+		"entities": {
+			"dungeonscombat:hitbox": {
+				"events": {
+					"hurt": "dungeonscombat.sweep"
+				},
+				"pitch": 1,
+				"volume": 0
+			}
+		}
+	}
+}

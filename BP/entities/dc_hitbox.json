@@ -1,0 +1,103 @@
+{
+	"format_version": "1.16.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "dungeonscombat:hitbox",
+			"is_summonable": true,
+			"is_spawnable": false,
+			"is_experimental": false
+		},
+		"component_groups": {
+			"dungeonscombat:despawn": {
+				"minecraft:instant_despawn": {
+				"remove_child_entities": true
+		     	}
+			}
+		},
+		"components": {
+			"minecraft:environment_sensor": {
+				"triggers": [
+					{
+					"filters": [
+						{
+							"any_of": [
+								{
+									"test": "is_riding",
+									"subject": "self",
+									"operator": "==",
+									"value": false
+								}
+							]
+						}
+					], "event": "minecraft:instant_despawn"
+				}
+				]
+			},
+            "minecraft:type_family": {
+                "family": [
+                    "dchitbox"
+                ]
+			},
+			"minecraft:knockback_resistance": {
+				"value": 1.0,
+				"max": 1.0
+			},
+			"minecraft:breathable": { 
+				"breathes_water": true
+			},
+			"minecraft:physics": { 
+				"has_gravity": false, 
+				"has_collision": false
+			},
+			"minecraft:custom_hit_test": {
+				"hitboxes": [
+					{
+						"pivot": [1.1, 1, 1.1],
+						"width": 1,
+						"height": 1
+					}
+				]
+			}, // allow only player to hurt this dummy entity
+			"minecraft:damage_sensor": {
+				"triggers": {
+					"on_damage": {
+						"filters": {
+							    "all_of": [
+								{ 
+									"test": "is_family", 
+									"subject": "other", 
+									"operator": "!=",
+									"value": "player" 
+								}
+							]
+						}
+					},
+					"deals_damage": false
+				}
+			},
+			"minecraft:health": {
+				"value": 1000000,
+		     	"max": 1000000,
+				"min": 1000000
+		    },
+			"minecraft:pushable": {
+				"is_pushable": false,
+				"is_pushable_by_piston": false
+			},
+			"minecraft:collision_box": {
+				"width": 0.0001,
+				"height": 0.0001
+			}
+		},
+		"events": {
+			"minecraft:instant_despawn": {
+				"add": {
+					"component_groups": [
+						"dungeonscombat:despawn"
+					]
+				}
+			}
+		}
+	}
+}
+	
