@@ -73,7 +73,7 @@
 					],
 				"seats": [
 					{
-					"position": [ 0, 1, 0 ],
+					"position": [ 0, 0, 0 ],
 					"min_rider_count": 0,
 					"max_rider_count": 0
 					}

@@ -7,7 +7,7 @@
 		"version": [
 			1,
 			1,
-			0
+			1
 		],
 		"min_engine_version": [
 			1,
@@ -42,13 +42,13 @@
 			"uuid": "22e02cde-62e8-3a47-a9eb-e84e88351edd",
 			"version": [
 				1,
-				0,
-				166
+				1,
+				16
 			]
 		},
 		{
 			"module_name": "@minecraft/server",
-			"version": "1.8.0"
+			"version": "1.11.0"
 		}
 	],
 	"metadata": {}

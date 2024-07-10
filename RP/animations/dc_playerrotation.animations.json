@@ -6,7 +6,7 @@
 			"bones": {
 				"root": {
 					"rotation": { 
-						"0.0": [ 0, "v.dc_angle-q.body_y_rotation", 0 ]
+						"0.0": [ 0, "math.atan2(-v.dc_x, v.dc_z)-q.body_y_rotation", 0 ]
 					}
 				}
 		}
@@ -16,11 +16,26 @@
 		    "bones": {
                 "head": {
 					"rotation": {
-					    "0.0": [ "-q.target_x_rotation", "-q.target_y_rotation-q.body_y_rotation+v.dc_angle", 0 ]
+					    "0.0": [ "-q.target_x_rotation", "math.atan2(-v.dc_x, v.dc_z)-q.target_y_rotation-q.body_y_rotation", 0 ]
 				}
 			}
 		}
 	},
+	// "animation.dc_player_attack.rotation": {
+	// 	"loop": true,
+	// 	"bones": {
+	// 		"root": {
+	// 			"rotation": {
+	// 				"0.0": [0, "q.property('dungeonscombat:playertarget')-90", 0]
+	// 			}
+	// 		},
+	// 		"head": {
+	// 			"rotation": {
+	// 				"0.0": [0, "q.property('dungeonscombat:playertarget')-90", 0]
+	// 			}
+	// 		}
+	// 	}
+	// },
 	// Those are optional, but without those, it'll rotate the player crazy when sneaking or swimming.
 	"animation.player.sneaking" : {
 			"loop" : true,

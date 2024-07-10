@@ -52,9 +52,9 @@
 			"minecraft:custom_hit_test": {
 				"hitboxes": [
 					{
-						"pivot": [1.1, 0, 1.1],
+						"pivot": [1.1, 1, 1.1],
 						"width": 1,
-						"height": 0.5
+						"height": 1
 					}
 				]
 			}, // allow only player to hurt this dummy entity

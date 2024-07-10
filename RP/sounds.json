@@ -1,14 +1,13 @@
-// {
-	// "individual_event_sounds": {
-		// "events": {
-			// "deny":{ "sound":"dungeonscombat.sweep", "volume": 1.0, "pitch": 1.0 }
-		// }
-    // }
-// }
-
-
-
-
-// 
-// Tried Java Aspects' method for custom sound effects, but it failed miserably, so this file is basically a coffin
-// 
+{
+	"entity_sounds": {
+		"entities": {
+			"dungeonscombat:hitbox": {
+				"events": {
+					"hurt": "dungeonscombat.sweep"
+				},
+				"pitch": 1,
+				"volume": 0
+			}
+		}
+	}
+}

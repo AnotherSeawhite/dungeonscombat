@@ -26,6 +26,75 @@
 					"name": "sounds/player/dc_sweep7"
 				}
 			]
+		},
+		"dungeonscombat.attack.default": {
+			"sounds": [
+				{
+					"name": "sounds/mob/player/attack/strong1",
+					"volume": 0.2
+				},
+				{
+					"name": "sounds/mob/player/attack/strong2",
+					"volume": 0.2
+				},
+				{
+					"name": "sounds/mob/player/attack/strong3",
+					"volume": 0.2
+				},
+				{
+					"name": "sounds/mob/player/attack/strong4",
+					"volume": 0.2
+				},
+				{
+					"name": "sounds/mob/player/attack/strong5",
+					"volume": 0.2
+				},
+				{
+					"name": "sounds/mob/player/attack/strong6",
+					"volume": 0.2
+				}
+			]
+		},
+		"game.player.attack.nodamage": {
+			"sounds": [
+				{
+					"name": "sounds/mob/player/attack/weak1",
+					"volume": 0
+				}
+			]
+		},
+		"game.player.attack.strong": {
+			"sounds": [
+				{
+					"name": "sounds/mob/player/attack/weak1",
+					"volume": 0
+				}
+			]
+		},
+		"game.player_mcd.swing": {
+    "sounds": [
+      "sounds/player/swing_steel1",
+      "sounds/player/swing_steel2",
+      "sounds/player/swing_steel3",
+      "sounds/player/swing_steel4",
+      "sounds/player/swing_steel5"
+    ]
+  },
+  "game.player_mcd.cut": {
+    "sounds": [
+      "sounds/player/cut1",
+      "sounds/player/cut2",
+      "sounds/player/cut3",
+      "sounds/player/cut4",
+      "sounds/player/cut5",
+      "sounds/player/cut6",
+      "sounds/player/cut7",
+      "sounds/player/cut8",
+      "sounds/player/cut9",
+      "sounds/player/cut10",
+      "sounds/player/cut11",
+      "sounds/player/cut12"
+			]
 		}
 	}
 }

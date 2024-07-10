@@ -3,15 +3,6 @@
   "minecraft:entity": {
     "description": {
       "identifier": "minecraft:player",
-      // ###
-      // "properties": {
-      //     "dungeonscombat:playertarget": {
-      //         "client_sync": true,
-      //         "type": "int",
-      //         "default": 0,
-      //         "range": [-180, 180]
-      //     }
-      // },
       // 
       // "scripts": {
       // "animate": [
@@ -24,9 +15,24 @@
         // "dc_player_movement_update": "controller.animation.dc_player_movement_update"
       // },
       // ### work in progress
+      // "properties": {
+      //   "dungeonscombat:attackdelay": {
+      //     "client_sync": true,
+      //     "type": "float",
+      //     "default": 0.5
+      //   }
+      // },
       "spawn_category": "creature",
       "is_spawnable": false,
       "is_summonable": false
+      // "properties": {
+      //     "dungeonscombat:playertarget": {
+      //         "client_sync": true,
+      //         "type": "int",
+      //         "default": 0,
+      //         "range": [-180,180]
+      //     }
+      // }
     },
     "component_groups": {
       "minecraft:add_raid_omen": {
@@ -88,7 +94,7 @@
         "value": 0.15
       },
       "minecraft:knockback_resistance": {
-        "value": 0.9
+        "value": 0.95
       },
       //
       // knockback resistance is for gameplay purpose. can disable if needed,
@@ -171,7 +177,7 @@
         ],
         "seats": [
           {
-            "position": [ 0, -1, 0 ],
+            "position": [ 0, 0, 0 ],
             "min_rider_count": 1,
             "max_rider_count": 1,
 					  "lock_rider_rotation": 0

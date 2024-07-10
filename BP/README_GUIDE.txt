@@ -21,9 +21,10 @@ The entities are needed to get the combat working. Don't touch anything!
 3. Scripts
 
 Scripts are also crucial for the camera and combat to function correctly.
-'dc_campos' scoreboard value sets the camera position. It accepts 1 to 4, but you can add more angles in scripts.  
+'dc_campos' scoreboard value sets the camera position. It accepts 1 to 4, but you can add more angles in cameraclass.js script.
 
 
-3.1. Combat
+4. Combat
 
 Combat works by player getting the damage done to dummy entity, and then applying the damage to the nearby mobs.
+You can edit the settings and add custom item configs in combatconfig.js script.

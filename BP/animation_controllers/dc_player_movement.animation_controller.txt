@@ -13,5 +13,3 @@
 		}
 	}
 }
-
-# work in progress

@@ -72,9 +72,8 @@
 					//
 					// [Dungeons Combat] !VITAL! Movement and player rotation queries 
 					//
-					"variable.dc_x = (q.modified_move_speed > 0.1) ? q.movement_direction(0) : v.dc_x;",
-					"variable.dc_z = (q.modified_move_speed > 0.1) ? q.movement_direction(2) : v.dc_z;",
-					"variable.dc_angle = math.atan2(v.dc_z, v.dc_x) - 90.0;"
+					"variable.dc_x = (q.modified_move_speed > 0.1 && !v.attack_time) ? q.movement_direction(0) : v.dc_x;",
+					"variable.dc_z = (q.modified_move_speed > 0.1 && !v.attack_time) ? q.movement_direction(2) : v.dc_z;"
 					//
 					//
 					//
@@ -107,6 +106,7 @@
 				"dc_playerindicator": "controller.animation.dc_playerindicator.model",
 				"dc_playerindicator.scale": "animation.dc_playerindicator.scale",
 				"dc_playerindicator.rotation": "animation.dc_playerindicator.rotation",
+				//"dc_player_attack.rotation": "animation.dc_player_attack.rotation",
 				//
 				//
 				//
