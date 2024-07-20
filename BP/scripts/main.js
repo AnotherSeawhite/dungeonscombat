@@ -2,6 +2,28 @@ import { system, world, EntityComponentTypes } from "@minecraft/server"
 import { Camera } from "./cameraclass.js"
 import "./combat.js"
 
+const dimensions = [
+    "overworld",
+    "nether",
+    "the_end"
+    ]
+
+for (const dimension of dimensions) {
+    for (const dummies of world.getDimension(dimension).getEntities({type: "dungeonscombat:healthbar"})) {
+    dummies.remove(); // remove health bars and damage indicators on world load
+}
+}
+
+
+// summon hitbox upon joining
+world.afterEvents.playerSpawn.subscribe(({ player }) => {
+  const hitboxridespawn = player.dimension.spawnEntity("dungeonscombat:hitboxride", player.location);
+  const rideableComp = player.getComponent("minecraft:rideable");
+  rideableComp.addRider(hitboxridespawn);
+  
+  player.runCommand('function dc.message')
+});
+
 function getScore(target, objective, useZero = true) { // get scoreboard
     try {
         const obj = world.scoreboard.getObjective(objective);
@@ -59,12 +81,4 @@ system.runInterval(() => {
             // this disables sprinting and crits
         }
     }
-});
-
-// summon hitbox upon joining
-world.afterEvents.playerSpawn.subscribe(({ player }) => {
-  const hitboxspawn = player.dimension.spawnEntity("dungeonscombat:hitboxride", player.location);
-  const rideableComp = player.getComponent("minecraft:rideable");
-  rideableComp.addRider(hitboxspawn);
-  player.runCommand('function dc.message')
 });

@@ -8,7 +8,7 @@
 					"animations": [ "dc_player.rotation", "dc_player_head.rotation" ],
 					"transitions": [
 						{
-							"moving": "q.ground_speed >= 1"
+							"moving": "q.is_moving"
 						// },
 						// {
 						// 	"attacking": "v.attack_time"
@@ -21,7 +21,7 @@
 					"animations": [ "dc_player.rotation", "dc_player_head.rotation" ],
 					"transitions": [
 						{
-							"idle": "q.ground_speed < 1"
+							"idle": "q.is_moving"	
 						// },
 						// {
 						// 	"attacking": "v.attack_time" 

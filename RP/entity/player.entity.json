@@ -52,8 +52,7 @@
 					//
 					// [Dungeons Combat] For player rotation
 					//
-					"variable.dc_x = 0;",
-					"variable.dc_z = 0;"
+					"variable.dc_rot = 0;"
 					//
 					//
 					//
@@ -72,8 +71,7 @@
 					//
 					// [Dungeons Combat] !VITAL! Movement and player rotation queries 
 					//
-					"variable.dc_x = (q.modified_move_speed > 0.1 && !v.attack_time) ? q.movement_direction(0) : v.dc_x;",
-					"variable.dc_z = (q.modified_move_speed > 0.1 && !v.attack_time) ? q.movement_direction(2) : v.dc_z;"
+					"variable.dc_rot = q.ground_speed > 1.5 ? math.lerprotate(v.dc_rot, math.atan2(-q.movement_direction(0),q.movement_direction(2)), 0.4) : v.dc_rot;"
 					//
 					//
 					//
@@ -85,7 +83,7 @@
 					//
 					"dc_playerindicator",
 					{
-					"dc_player_movement": "q.is_moving && !q.is_gliding || !q.is_sleeping || q.is_swimming"
+					"dc_player_movement": "!q.is_gliding || !q.is_sleeping || q.is_swimming"
 					}
 			        //
 					//
