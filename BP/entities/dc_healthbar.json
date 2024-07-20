@@ -1,0 +1,47 @@
+{
+	"format_version": "1.20.60",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "dungeonscombat:healthbar",
+			"is_spawnable": false,
+			"is_summonable": true,
+			"is_experimental": false
+		},
+		"component_groups": {},
+		"components": {
+			"minecraft:physics": {
+				"has_collision": false,
+				"has_gravity": false
+			},
+            "minecraft:damage_sensor": {
+                "triggers": [
+                    {
+                        "cause": "all",
+                        "deals_damage": false
+                    }
+                ]
+            },
+            "minecraft:knockback_resistance": {
+                "value": 1
+            },
+            "minecraft:collision_box": {
+                "height": 0.01,
+                "width": 0.01
+            },
+            "minecraft:custom_hit_test": {
+                "hitboxes": [
+                    {
+                        "pivot": [0, 999, 0],
+                        "width": 0,
+                        "height": 0
+                    }
+                ]
+            },
+            "minecraft:nameable": {
+                "always_show": true,
+                "allow_name_tag_renaming": true
+            }
+		}
+	},
+	"events": {}
+}

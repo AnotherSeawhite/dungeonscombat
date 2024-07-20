@@ -67,15 +67,30 @@
 				}
 			},
 			"minecraft:rideable": {
-				"seat_count": 1,
+				"seat_count": 4,
 				"family_types": [
 					"dchitbox"
 					],
 				"seats": [
 					{
-					"position": [ 0, 0, 0 ],
+					"position": [ 1.1, 1, 1.1 ],
 					"min_rider_count": 0,
-					"max_rider_count": 0
+					"max_rider_count": 4
+					},
+					{
+					"position": [ -1.1, 1, 1.1 ],
+					"min_rider_count": 1,
+					"max_rider_count": 4
+					},
+					{
+					"position": [ 1.1, 1, -1.1 ],
+					"min_rider_count": 2,
+					"max_rider_count": 4
+					},
+					{
+					"position": [ -1.1, 1, -1.1 ],
+					"min_rider_count": 3,
+					"max_rider_count": 4
 					}
 				]
 			},

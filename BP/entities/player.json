@@ -3,36 +3,9 @@
   "minecraft:entity": {
     "description": {
       "identifier": "minecraft:player",
-      // 
-      // "scripts": {
-      // "animate": [
-          // {
-            // "dc_player_movement_update": "q.is_moving && !q.is_gliding || !q.is_sleeping || q.is_swimming"
-            // }
-        // ]
-      // },
-      // "animations": {
-        // "dc_player_movement_update": "controller.animation.dc_player_movement_update"
-      // },
-      // ### work in progress
-      // "properties": {
-      //   "dungeonscombat:attackdelay": {
-      //     "client_sync": true,
-      //     "type": "float",
-      //     "default": 0.5
-      //   }
-      // },
       "spawn_category": "creature",
       "is_spawnable": false,
       "is_summonable": false
-      // "properties": {
-      //     "dungeonscombat:playertarget": {
-      //         "client_sync": true,
-      //         "type": "int",
-      //         "default": 0,
-      //         "range": [-180,180]
-      //     }
-      // }
     },
     "component_groups": {
       "minecraft:add_raid_omen": {
@@ -91,7 +64,7 @@
       // [Dungeons Combat] Movement
       //
       "minecraft:movement": {
-        "value": 0.15
+        "value": 0.15 // edit instead of paste
       },
       "minecraft:knockback_resistance": {
         "value": 0.95
@@ -99,6 +72,49 @@
       //
       // knockback resistance is for gameplay purpose. can disable if needed,
       // but it can get annyoing
+      //
+      //
+      // [Dungeons Combat] For hitbox, replace existing minecraft:rideable with this 
+      //
+      "minecraft:addrider": {
+				"entity_type": "dungeonscombat:hitboxride"
+			},
+      "minecraft:rideable": {
+        "seat_count": 1,
+        "family_types": [
+          "dchitboxride"
+        ],
+        "seats": [
+          {
+            "position": [ 0, 0, 0 ],
+            "min_rider_count": 1,
+            "max_rider_count": 1,
+					  "lock_rider_rotation": 0
+          }
+        ]
+      },
+      //
+      // [Dungeons Combat] Hitstun
+      //
+      "minecraft:damage_sensor": {
+				"triggers": {
+					"on_damage": {
+						"filters": {
+							    "all_of": [
+								{ 
+									"test": "has_tag", 
+									"subject": "damager", 
+									"operator": "==",
+									"value": "dc_stunned" 
+								}
+							]
+						}
+					},
+					"deals_damage": false
+				}
+			},
+      //
+      //
       //
       "minecraft:hurt_on_condition": {
         "damage_conditions": [
@@ -164,29 +180,6 @@
       "minecraft:insomnia": {
         "days_until_insomnia": 3
       },
-      //
-      // [Dungeons Combat] For hitbox
-      //
-      "minecraft:addrider": {
-				"entity_type": "dungeonscombat:hitboxride"
-			},
-      "minecraft:rideable": {
-        "seat_count": 1,
-        "family_types": [
-          "dchitboxride"
-        ],
-        "seats": [
-          {
-            "position": [ 0, 0, 0 ],
-            "min_rider_count": 1,
-            "max_rider_count": 1,
-					  "lock_rider_rotation": 0
-          }
-        ]
-      },
-      //
-      //
-      //
       "minecraft:conditional_bandwidth_optimization": {
       },
       "minecraft:block_climber": {},

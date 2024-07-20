@@ -1,0 +1,16 @@
+{
+	"format_version": "1.10.0",
+	"animations": {
+		"animation.dc_player_movement_update": {
+			"loop": true,
+			"timeline": {
+				"0.0": [
+					"v.dc_mov_x = q.modified_move_speed > 0.1 ? q.movement_direction(0) : v.dc_mov_x;",
+					"v.dc_mov_z = q.modified_move_speed > 0.1 ? q.movement_direction(2) : v.dc_mov_z;",
+					"(q.is_moving) ? { v.dc_mov_dir = math.atan2(v.dc_mov_x,v.dc_mov_z); };"
+				]
+			},
+			"animation_length": 0.04
+		}
+	}
+}

@@ -15,16 +15,15 @@ Functions are very crucial for the addon to run properly. It mainly uses scorebo
 
 2. Entities
 
-The entities are needed to get the combat working. Don't touch anything!
-
+Most of the entities in the addon are dummy entities, which are required for the scripts to function. (ex. Hitboxes and health bars)
 
 3. Scripts
 
 Scripts are also crucial for the camera and combat to function correctly.
 'dc_campos' scoreboard value sets the camera position. It accepts 1 to 4, but you can add more angles in cameraclass.js script.
+All the combats happen in combat.js. You can modify them if you want, but be careful, it's very prone to break! 
 
 
-4. Combat
+3.1. Combat
 
-Combat works by player getting the damage done to dummy entity, and then applying the damage to the nearby mobs.
-You can edit the settings and add custom item configs in combatconfig.js script.
+The player's attack direction is same as the direction the player is moving towards at. The radius, damage, cooldown/delay, etc, is all defined in combatcofig.json. You can also add more custom weapon configs!

@@ -1,0 +1,28 @@
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {
+		"controller.animation.dc_player_movement_update": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"animations": ["dc_player_movement_update"],
+					"on_entry": [
+						"/event entity @s dungeonscombat:playertargetupdate"
+					],	
+					"transitions": [
+						{
+							"update": "query.is_moving"
+						}
+					]
+				},
+				"update": {
+					"transitions": [
+						{
+							"default": "(1.0)"
+						}
+					]
+				}
+			}
+		}
+	}
+}
