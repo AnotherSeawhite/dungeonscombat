@@ -10,6 +10,7 @@ Dungeons Combat is an addon for Minecraft Bedrock Edition that implements the ba
 ## Features
 - Top-down isometric-like camera view
 - (In progress) Hack and Slash combat and movement
+- Highly customizable features with addons compatibility
 
 ## Screenshots
 Coming soon!
