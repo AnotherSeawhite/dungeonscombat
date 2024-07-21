@@ -29,4 +29,4 @@ assignees: ''
  - Platform: [e.g. PC, Mobile]
 
 **Additional context**
-<!-- Add any other context about the problem here. -->
+<!-- Add any other context about the problem here. Content logs for example. -->
