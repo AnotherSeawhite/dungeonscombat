@@ -13,7 +13,7 @@ assignees: ''
 
 
 **To Reproduce**
-<!-- Instead of writing only how to do it, write the steps of reproduce. -->
+<!-- Instead of writing only how to do it, write the steps to reproduce. -->
 
 
 **Expected behavior**
