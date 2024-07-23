@@ -29,6 +29,7 @@ export const advancedSettings = {
 
 export const weaponConfig = {
   sword: {
+    identifier: "minecraft",
     ids: ["_sword"],
     dmgmult: 1.1,
     critchance: 3,
@@ -37,24 +38,40 @@ export const weaponConfig = {
     radius: 30,
     delay: 2,
     hitstun: 1,
+    knockback: 1,
     weaponsound: 'game.player_mcd.swing',
     weaponhitsound: 'game.player_mcd.cut',
-    soundpitch: 1.0
+    soundpitch: 1.0,
+    swingScript: (world, player) => { // scripts, put null if unneeded
+        null
+    },
+    hitScript: (world, player, target, damage) => {
+    	null
+    }
   },
   axe: {
+    identifier: "minecraft",
     ids: ["_axe"],
     dmgmult: 1.4,
     critchance: 5,
-    cooldown: 500,
+    cooldown: 400,
     range: 2.6,
     radius: 25,
-    delay: 5,
+    delay: 2,
     hitstun: 1,
+    knockback: 1.1,
     weaponsound: 'game.player_mcd.swing',
     weaponhitsound: 'game.player_mcd.cut',
-    soundpitch: 0.7
+    soundpitch: 0.8,
+    swingScript: (world, player) => { // scripts, put null if unneeded
+        null
+    },
+    hitScript: (world, player, target, damage) => {
+    	null
+    }
   },
   pickaxe: {
+    identifier: "minecraft",
     ids: ["_pickaxe"],
     dmgmult: 1.1,
     critchance: 15,
@@ -63,11 +80,19 @@ export const weaponConfig = {
     radius: 20,
     delay: 4,
     hitstun: 1,
+    knockback: 1.3,
     weaponsound: 'game.player_mcd.swing',
     weaponhitsound: 'game.player_mcd.cut',
-    soundpitch: 0.9
+    soundpitch: 0.9,
+    swingScript: (world, player) => { // scripts, put null if unneeded
+        null
+    },
+    hitScript: (world, player, target, damage) => {
+    	null
+    }
   },
   trident: {
+    identifier: "minecraft",
     ids: ["trident"],
     dmgmult: 1.1,
     critchance: 5,
@@ -75,12 +100,20 @@ export const weaponConfig = {
     range: 3.5,
     radius: 25,
     delay: 5,
-    hitstun: 1,
+    hitstun: 0.5,
+    knockback: 0.8,
     weaponsound: 'game.player_mcd.swing',
     weaponhitsound: 'game.player_mcd.cut',
-    soundpitch: 0.9
+    soundpitch: 0.9,
+    swingScript: (world, player) => { // scripts, put null if unneeded
+        null
+    },
+    hitScript: (world, player, target, damage) => {
+    	null
+    }
   },
-    hoe: {
+  hoe: {
+    identifier: "minecraft",
     ids: ["_hoe"],
     dmgmult: 0.8,
     critchance: 2,
@@ -89,11 +122,74 @@ export const weaponConfig = {
     radius: 30,
     delay: 2,
     hitstun: 0.5,
+    knockback: 1,
     weaponsound: 'game.player_mcd.swing',
     weaponhitsound: 'game.player_mcd.cut',
-    soundpitch: 0.9
+    soundpitch: 0.9,
+    swingScript: (world, player) => { // scripts, put null if unneeded
+        null
+    },
+    hitScript: (world, player, target, damage) => {
+    	null
+    }
+  },
+  shovel: {
+    identifier: "minecraft",
+    ids: ["_shovel"],
+    dmgmult: 1.2,
+    critchance: 2,
+    cooldown: 400,
+    range: 2.4,
+    radius: 40,
+    delay: 3,
+    hitstun: 1.5,
+    knockback: 1.5,
+    weaponsound: 'game.player_mcd.swing',
+    weaponhitsound: 'random.anvil_land',
+    soundpitch: 0.9,
+    swingScript: (world, player) => { // scripts, put null if unneeded
+        null
+    },
+    hitScript: (world, player, target, damage) => {
+    	function getRandomFloat(min, max) {
+            return Math.random() * (max - min) + min;
+        };
+    	world.playSound("random.break",player.location,{volume: 2, pitch: getRandomFloat(0.95,1.2)*player.getDynamicProperty('dc_sndptch')}); 
+    }
+  },
+  mace: {
+    identifier: "minecraft",
+    ids: ["mace"],
+    dmgmult: 1.5,
+    critchance: 0,
+    cooldown: 600,
+    range: 2.6,
+    radius: 40,
+    delay: 3,
+    hitstun: 2,
+    knockback: 2,
+    weaponsound: 'game.player_mcd.swing',
+    weaponhitsound: 'mace.smash_air',
+    soundpitch: 0.7,
+    swingScript: (world, player) => { // scripts, put null if unneeded
+       null
+    },
+    hitScript: (world, player, target, damage) => {
+    	let { families, excludedTypes, excludedFamilies } = advancedSettings;
+    	 const entities = player.dimension.getEntities({
+            maxDistance: 5,
+            location: target.location,
+            excludeTypes: excludedTypes
+        })
+        player.dimension.spawnParticle(`minecraft:ice_evaporation_emitter`,target.location)
+        player.runCommand('camerashake add @s 0.01 0.5 rotational')
+        entities.forEach(entity => {
+        	entity.applyImpulse({x: 0, y: 0.5, z: 0})
+          })
+    }
   },
   example: {
+    identifier: "exampleidentifier",
     ids: ["exampletypeid"],
     dmgmult: 1.0,
     critchance: 5,
@@ -102,11 +198,19 @@ export const weaponConfig = {
     radius: 30,
     delay: 2,
     hitstun: 1,
+    knockback: 1,
     weaponsound: 'game.player_mcd.swing',
     weaponhitsound: 'game.player_mcd.cut',
-    soundpitch: 1.0
+    soundpitch: 1.0,
+    swingScript: (world, player) => { // scripts, put null if unneeded
+      player.runCommand("say lol") 
+    },
+    hitScript: (world, player, target, damage) => {
+    	player.runCommand(`say i just hit ${target.typeId} for ${Math.floor(damage*10)/10}`)
+    }
     },
   example2: {
+    identifier: "exampleidentifier",
     ids: ["exampletypeid2"],
     dmgmult: 1.4,
     critchance: 5,
@@ -115,8 +219,16 @@ export const weaponConfig = {
     radius: 30,
     delay: 5,
     hitstun: 1,
+    knockback: 1,
     weaponsound: 'game.player_mcd.swing',
     weaponhitsound: 'game.player_mcd.cut',
-    soundpitch: 0.7
+    soundpitch: 0.7,
+    swingScript: (world, player) => { // scripts, put null if unneeded
+       null
+    },
+    hitScript: (world, player, target, damage) => {
+      const health = player.getComponent('minecraft:health');
+      health.setCurrentValue(health.currentValue+(Math.floor(damage)/10))
+    }
     } // if youre new to this, dont forget to add ',' next to '}' when youre adding another one!
 };

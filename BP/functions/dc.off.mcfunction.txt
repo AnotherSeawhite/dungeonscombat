@@ -4,7 +4,6 @@ inputpermission set @a[tag=dcstate] camera enabled
 
 #tag
 tag @a remove dcstate
-gamerule pvp true
 
 #go back
 camera @a clear

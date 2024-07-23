@@ -76,9 +76,9 @@
       //
       // [Dungeons Combat] For hitbox, replace existing minecraft:rideable with this 
       //
-      "minecraft:addrider": {
-				"entity_type": "dungeonscombat:hitboxride"
-			},
+      //"minecraft:addrider": {
+				//"entity_type": "dungeonscombat:hitboxride"
+			//},
       "minecraft:rideable": {
         "seat_count": 1,
         "family_types": [
@@ -89,7 +89,7 @@
             "position": [ 0, 0, 0 ],
             "min_rider_count": 1,
             "max_rider_count": 1,
-					  "lock_rider_rotation": 0
+		    "lock_rider_rotation": 0
           }
         ]
       },
